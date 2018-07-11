@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OverlayIconsEditor", "OverlayIconsEditor\OverlayIconsEditor.vbproj", "{FF61EDA9-C81B-49C1-89C2-38AACFFCB0B1}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExploreIcons", "ExploreIcons\ExploreIcons.vbproj", "{F272C10C-21E0-4ED1-ADD1-0D5A31AAAC4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FF61EDA9-C81B-49C1-89C2-38AACFFCB0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF61EDA9-C81B-49C1-89C2-38AACFFCB0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF61EDA9-C81B-49C1-89C2-38AACFFCB0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F272C10C-21E0-4ED1-ADD1-0D5A31AAAC4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F272C10C-21E0-4ED1-ADD1-0D5A31AAAC4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F272C10C-21E0-4ED1-ADD1-0D5A31AAAC4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F272C10C-21E0-4ED1-ADD1-0D5A31AAAC4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

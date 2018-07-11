@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("OverlayIconsEditor")>
+<Assembly: AssemblyTitle("ExploreIcons")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("OverlayIconsEditor")>
+<Assembly: AssemblyProduct("ExploreIcons")>
 <Assembly: AssemblyCopyright("Copyright © 2018")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("58929249-f75e-4021-b124-14e55f457d74")>
+<Assembly: Guid("7cfca9c6-1391-4e1e-b30a-1cb30f6a6c72")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2018.7.11.73")>
-<Assembly: AssemblyFileVersion("2018.7.11.73")>
+<Assembly: AssemblyVersion("2018.7.11.54")>
+<Assembly: AssemblyFileVersion("2018.7.11.54")>

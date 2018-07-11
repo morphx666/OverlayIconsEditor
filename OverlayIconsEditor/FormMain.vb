@@ -63,7 +63,7 @@ Public Class FormMain
     Private Function GetIcon(subKey As String) As Bitmap
         Dim bmp As Bitmap = Nothing
 
-        ' TODO: Can we call IShellIconOverlayIdentifier::GetOverlayInfo over the InProcServer32 to get the icon information? 
+        ' TODO: Can we call IShellIconOverlayIdentifier::GetOverlayInfo over the InProcServer32 to get the icon image? 
         ' https://blogs.msdn.microsoft.com/jonathanswift/2006/10/03/dynamically-calling-an-unmanaged-dll-from-net-c/
 
         Return bmp
@@ -145,6 +145,10 @@ Public Class FormMain
             If MsgBox("Do you want to restart explorer to apply these changes now?", MsgBoxStyle.Question Or MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 Native.RestartExplorer()
             End If
+
+            MsgBox("The changes have been successfully applied", MsgBoxStyle.Information)
+        Else
+            MsgBox("Changes will be reverted due to a failed backup", MsgBoxStyle.Exclamation)
         End If
 
         LoadOverlayIcons()

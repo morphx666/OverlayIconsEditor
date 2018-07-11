@@ -16,13 +16,14 @@ Public Class Native
 
     Public Shared Sub RestartExplorer()
         Try
-            Dim ptr = FindWindow("Shell_TrayWnd", Nothing)
-            PostMessage(ptr, WM_USER + 436, IntPtr.Zero, IntPtr.Zero)
-
             Do
+                Dim ptr As IntPtr = FindWindow("Shell_TrayWnd", Nothing)
+                PostMessage(ptr, WM_USER + 436, IntPtr.Zero, IntPtr.Zero)
+                Thread.Sleep(500)
+
                 ptr = FindWindow("Shell_TrayWnd", Nothing)
                 If ptr.ToInt32() = 0 Then Exit Do
-                Thread.Sleep(250)
+                Thread.Sleep(1000)
             Loop
         Catch ex As Exception
             Debug.WriteLine($"{ex.Message} {ex.StackTrace}")

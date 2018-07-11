@@ -3,7 +3,7 @@ Imports Microsoft.Win32
 
 Public Class FormMain
     Private Const overlaysKey As String = "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers"
-    Private maxSupportedOverlays As Integer = If(Environment.Is64BitOperatingSystem, 11, 15) ' Really Microsoft? Really? Why???!!!
+    Private maxSupportedOverlays As Integer = If(Environment.Is64BitOperatingSystem, 11, 15) - 1 ' Really Microsoft? Really? Why???!!!
 
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadOverlayIcons()

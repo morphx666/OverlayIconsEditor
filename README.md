@@ -9,3 +9,5 @@ These overlays appear as small indicators over the files' default icons, indicat
 Because Windows has a limit on the number of handlers that are used to display such overlays, this tool can be useful to define your own priorities and elevate or downgrade certain handlers based on your preferences.
 
 ![OverlayIconsEditor](https://xfx.net/stackoverflow/OverlayIconsEditor/OverlayIconsEditor.png)
+
+Handlers that appear in bold (towards the top the of the list) will be guaranteed to be used by Explorer, while handlers towards the end of the list will be ignored.

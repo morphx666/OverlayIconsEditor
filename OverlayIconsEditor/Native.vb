@@ -76,7 +76,6 @@ Public Class Native
                 For i As Integer = 0 To r - 1
                     If extractSmallIcon Then
                         extractedIcons.Add(Icon.FromHandle(hImgSmall(i)).Clone())
-
                     Else
                         extractedIcons.Add(Icon.FromHandle(hImgLarge(i)).Clone())
                     End If
@@ -84,24 +83,28 @@ Public Class Native
                     DestroyIcon(hImgSmall(i))
                 Next
             Else
-                Dim shinfo As SHFILEINFO = New SHFILEINFO With {
+                Dim shInfo As SHFILEINFO = New SHFILEINFO With {
                     .szDisplayName = New String(Chr(0), 260),
                     .szTypeName = New String(Chr(0), 80),
                     .iIcon = 0
                 }
 
-                If extractSmallIcon Then
-                    hImgSmall(0) = SHGetFileInfo(fileName, 0, shinfo, Marshal.SizeOf(shinfo), SHGFI_ICON Or SHGFI_SMALLICON)
-                Else
-                    hImgLarge(0) = SHGetFileInfo(fileName, 0, shinfo, Marshal.SizeOf(shinfo), SHGFI_ICON Or SHGFI_LARGEICON)
-                End If
-                If shinfo.hIcon.ToInt32() <> 0 Then
-                    extractedIcons.Add(Icon.FromHandle(shinfo.hIcon).Clone())
-                    DestroyIcon(shinfo.hIcon)
+                SHGetFileInfo(fileName, 0, shInfo, Marshal.SizeOf(shInfo), SHGFI_ICON Or If(extractSmallIcon, SHGFI_SMALLICON, SHGFI_LARGEICON))
+                If shInfo.hIcon <> IntPtr.Zero Then
+                    extractedIcons.Add(Icon.FromHandle(shInfo.hIcon).Clone())
+                    DestroyIcon(shInfo.hIcon)
                 End If
             End If
         End If
 
         Return extractedIcons
+    End Function
+
+    Public Shared Function CountIconsInFile(fileName As String) As Integer
+        If IO.File.Exists(fileName) Then
+            Return ExtractIconEx(fileName, -1, Nothing, Nothing, 0)
+        Else
+            Return 0
+        End If
     End Function
 End Class

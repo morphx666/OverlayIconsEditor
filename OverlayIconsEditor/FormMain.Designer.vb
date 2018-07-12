@@ -23,13 +23,14 @@ Partial Class FormMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.ListViewOverlayIcons = New ListViewDoubleBuffer()
+        Me.ListViewOverlayIcons = New OverlayIconsEditor.ListViewDoubleBuffer()
         Me.ColumnHeaderName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeaderDescription = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ImageListIcons = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageListFilesIcons = New System.Windows.Forms.ImageList(Me.components)
         Me.ButtonUp = New System.Windows.Forms.Button()
         Me.ButtonDown = New System.Windows.Forms.Button()
         Me.ButtonApply = New System.Windows.Forms.Button()
+        Me.ImageListIcons = New System.Windows.Forms.ImageList(Me.components)
         Me.SuspendLayout()
         '
         'ListViewOverlayIcons
@@ -44,12 +45,12 @@ Partial Class FormMain
         Me.ListViewOverlayIcons.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
         Me.ListViewOverlayIcons.HideSelection = False
         Me.ListViewOverlayIcons.LabelWrap = False
-        Me.ListViewOverlayIcons.LargeImageList = Me.ImageListIcons
+        Me.ListViewOverlayIcons.LargeImageList = Me.ImageListFilesIcons
         Me.ListViewOverlayIcons.Location = New System.Drawing.Point(12, 12)
         Me.ListViewOverlayIcons.Name = "ListViewOverlayIcons"
         Me.ListViewOverlayIcons.ShowGroups = False
         Me.ListViewOverlayIcons.Size = New System.Drawing.Size(581, 427)
-        Me.ListViewOverlayIcons.SmallImageList = Me.ImageListIcons
+        Me.ListViewOverlayIcons.SmallImageList = Me.ImageListFilesIcons
         Me.ListViewOverlayIcons.TabIndex = 0
         Me.ListViewOverlayIcons.UseCompatibleStateImageBehavior = False
         Me.ListViewOverlayIcons.View = System.Windows.Forms.View.Details
@@ -62,11 +63,11 @@ Partial Class FormMain
         '
         Me.ColumnHeaderDescription.Text = "Description"
         '
-        'ImageListIcons
+        'ImageListFilesIcons
         '
-        Me.ImageListIcons.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit
-        Me.ImageListIcons.ImageSize = New System.Drawing.Size(32, 32)
-        Me.ImageListIcons.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageListFilesIcons.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit
+        Me.ImageListFilesIcons.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageListFilesIcons.TransparentColor = System.Drawing.Color.Transparent
         '
         'ButtonUp
         '
@@ -105,6 +106,12 @@ Partial Class FormMain
         Me.ButtonApply.Text = "Apply"
         Me.ButtonApply.UseVisualStyleBackColor = True
         '
+        'ImageListIcons
+        '
+        Me.ImageListIcons.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit
+        Me.ImageListIcons.ImageSize = New System.Drawing.Size(32, 32)
+        Me.ImageListIcons.TransparentColor = System.Drawing.Color.Transparent
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -126,9 +133,10 @@ Partial Class FormMain
 
     Friend WithEvents ListViewOverlayIcons As ListViewDoubleBuffer
     Friend WithEvents ColumnHeaderName As ColumnHeader
-    Friend WithEvents ImageListIcons As ImageList
+    Friend WithEvents ImageListFilesIcons As ImageList
     Friend WithEvents ColumnHeaderDescription As ColumnHeader
     Friend WithEvents ButtonUp As Button
     Friend WithEvents ButtonDown As Button
     Friend WithEvents ButtonApply As Button
+    Friend WithEvents ImageListIcons As ImageList
 End Class

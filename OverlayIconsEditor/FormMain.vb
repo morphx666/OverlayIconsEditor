@@ -15,7 +15,7 @@ Public Class FormMain
     End Sub
 
     Private Sub LoadOverlayIcons()
-        ImageListIcons.Images.Clear()
+        ImageListFilesIcons.Images.Clear()
 
         With ListViewOverlayIcons
             .BeginUpdate()

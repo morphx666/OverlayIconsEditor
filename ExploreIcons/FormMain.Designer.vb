@@ -28,11 +28,12 @@ Partial Class FormMain
         Me.ButtonSelectFolder = New System.Windows.Forms.Button()
         Me.ListViewFiles = New System.Windows.Forms.ListView()
         Me.ColumnHeaderFileName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ImageListFileIcons = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageListFilesIcons = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageListIconsInFile = New System.Windows.Forms.ImageList(Me.components)
         Me.ListViewIcons = New System.Windows.Forms.ListView()
-        Me.ImageListIcons = New System.Windows.Forms.ImageList(Me.components)
         Me.TrackBarIconsSize = New System.Windows.Forms.TrackBar()
         Me.LabelIconSize = New System.Windows.Forms.Label()
+        Me.ColumnHeaderIcons = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.TrackBarIconsSize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -51,13 +52,13 @@ Partial Class FormMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxFolder.Location = New System.Drawing.Point(63, 12)
         Me.TextBoxFolder.Name = "TextBoxFolder"
-        Me.TextBoxFolder.Size = New System.Drawing.Size(869, 25)
+        Me.TextBoxFolder.Size = New System.Drawing.Size(884, 25)
         Me.TextBoxFolder.TabIndex = 1
         '
         'ButtonSelectFolder
         '
         Me.ButtonSelectFolder.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonSelectFolder.Location = New System.Drawing.Point(938, 13)
+        Me.ButtonSelectFolder.Location = New System.Drawing.Point(953, 13)
         Me.ButtonSelectFolder.Name = "ButtonSelectFolder"
         Me.ButtonSelectFolder.Size = New System.Drawing.Size(29, 23)
         Me.ButtonSelectFolder.TabIndex = 2
@@ -69,7 +70,7 @@ Partial Class FormMain
         Me.ListViewFiles.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ListViewFiles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ListViewFiles.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeaderFileName})
+        Me.ListViewFiles.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeaderFileName, Me.ColumnHeaderIcons})
         Me.ListViewFiles.FullRowSelect = True
         Me.ListViewFiles.GridLines = True
         Me.ListViewFiles.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
@@ -79,8 +80,8 @@ Partial Class FormMain
         Me.ListViewFiles.MultiSelect = False
         Me.ListViewFiles.Name = "ListViewFiles"
         Me.ListViewFiles.ShowGroups = False
-        Me.ListViewFiles.Size = New System.Drawing.Size(350, 525)
-        Me.ListViewFiles.SmallImageList = Me.ImageListFileIcons
+        Me.ListViewFiles.Size = New System.Drawing.Size(350, 526)
+        Me.ListViewFiles.SmallImageList = Me.ImageListFilesIcons
         Me.ListViewFiles.TabIndex = 3
         Me.ListViewFiles.UseCompatibleStateImageBehavior = False
         Me.ListViewFiles.View = System.Windows.Forms.View.Details
@@ -89,41 +90,41 @@ Partial Class FormMain
         '
         Me.ColumnHeaderFileName.Text = "File Name"
         '
-        'ImageListFileIcons
+        'ImageListFilesIcons
         '
-        Me.ImageListFileIcons.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit
-        Me.ImageListFileIcons.ImageSize = New System.Drawing.Size(16, 16)
-        Me.ImageListFileIcons.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageListFilesIcons.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit
+        Me.ImageListFilesIcons.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageListFilesIcons.TransparentColor = System.Drawing.Color.Transparent
+        '
+        'ImageListIconsInFile
+        '
+        Me.ImageListIconsInFile.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit
+        Me.ImageListIconsInFile.ImageSize = New System.Drawing.Size(32, 32)
+        Me.ImageListIconsInFile.TransparentColor = System.Drawing.Color.Transparent
         '
         'ListViewIcons
         '
         Me.ListViewIcons.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListViewIcons.LargeImageList = Me.ImageListIcons
+        Me.ListViewIcons.LargeImageList = Me.ImageListIconsInFile
         Me.ListViewIcons.Location = New System.Drawing.Point(419, 43)
         Me.ListViewIcons.Name = "ListViewIcons"
-        Me.ListViewIcons.Size = New System.Drawing.Size(548, 477)
-        Me.ListViewIcons.SmallImageList = Me.ImageListIcons
+        Me.ListViewIcons.Size = New System.Drawing.Size(563, 478)
+        Me.ListViewIcons.SmallImageList = Me.ImageListIconsInFile
         Me.ListViewIcons.TabIndex = 4
         Me.ListViewIcons.UseCompatibleStateImageBehavior = False
-        '
-        'ImageListIcons
-        '
-        Me.ImageListIcons.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit
-        Me.ImageListIcons.ImageSize = New System.Drawing.Size(32, 32)
-        Me.ImageListIcons.TransparentColor = System.Drawing.Color.Transparent
         '
         'TrackBarIconsSize
         '
         Me.TrackBarIconsSize.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TrackBarIconsSize.LargeChange = 16
-        Me.TrackBarIconsSize.Location = New System.Drawing.Point(419, 526)
+        Me.TrackBarIconsSize.Location = New System.Drawing.Point(419, 527)
         Me.TrackBarIconsSize.Maximum = 256
         Me.TrackBarIconsSize.Minimum = 16
         Me.TrackBarIconsSize.Name = "TrackBarIconsSize"
-        Me.TrackBarIconsSize.Size = New System.Drawing.Size(486, 45)
+        Me.TrackBarIconsSize.Size = New System.Drawing.Size(501, 45)
         Me.TrackBarIconsSize.SmallChange = 8
         Me.TrackBarIconsSize.TabIndex = 5
         Me.TrackBarIconsSize.TickFrequency = 8
@@ -134,18 +135,23 @@ Partial Class FormMain
         '
         Me.LabelIconSize.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelIconSize.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelIconSize.Location = New System.Drawing.Point(911, 541)
+        Me.LabelIconSize.Location = New System.Drawing.Point(926, 542)
         Me.LabelIconSize.Name = "LabelIconSize"
         Me.LabelIconSize.Size = New System.Drawing.Size(56, 15)
         Me.LabelIconSize.TabIndex = 6
         Me.LabelIconSize.Text = "32x32"
         Me.LabelIconSize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'ColumnHeaderIcons
+        '
+        Me.ColumnHeaderIcons.Text = "Icons"
+        Me.ColumnHeaderIcons.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(979, 580)
+        Me.ClientSize = New System.Drawing.Size(994, 581)
         Me.Controls.Add(Me.LabelIconSize)
         Me.Controls.Add(Me.TrackBarIconsSize)
         Me.Controls.Add(Me.ListViewIcons)
@@ -170,8 +176,9 @@ Partial Class FormMain
     Friend WithEvents ListViewFiles As ListView
     Friend WithEvents ColumnHeaderFileName As ColumnHeader
     Friend WithEvents ListViewIcons As ListView
-    Friend WithEvents ImageListIcons As ImageList
-    Friend WithEvents ImageListFileIcons As ImageList
+    Friend WithEvents ImageListFilesIcons As ImageList
+    Friend WithEvents ImageListIconsInFile As ImageList
     Friend WithEvents TrackBarIconsSize As TrackBar
     Friend WithEvents LabelIconSize As Label
+    Friend WithEvents ColumnHeaderIcons As ColumnHeader
 End Class
